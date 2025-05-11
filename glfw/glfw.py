@@ -215,7 +215,12 @@ def build_wayland_protocols(
         if '/' in protocol:
             src = os.path.join(env.wayland_packagedir, protocol)
             if not os.path.exists(src):
-                raise SystemExit(f'The wayland-protocols package on your system is missing the {protocol} protocol definition file')
+                # Try to find protocol in our local directory
+                local_src = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'protocols', protocol)
+                if os.path.exists(local_src):
+                    src = local_src
+                else:
+                    raise SystemExit(f'The wayland-protocols package on your system is missing the {protocol} protocol definition file')
         else:
             src = os.path.join(os.path.dirname(os.path.abspath(__file__)), protocol)
             if not os.path.exists(src):

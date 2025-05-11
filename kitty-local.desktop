@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Kitty Local Build
+GenericName=Terminal emulator
+Comment=Local build with wayland-protocols fixes
+TryExec=/home/belive/open-source/kitty/run-local-kitty.sh
+Exec=/home/belive/open-source/kitty/run-local-kitty.sh
+Icon=kitty
+Categories=System;TerminalEmulator;
+Terminal=false
+StartupWMClass=kitty
+StartupNotify=true
+Keywords=terminal;console;
