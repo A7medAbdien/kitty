@@ -26,7 +26,6 @@ echo "Config file being used by local kitty build:"
 
 # Run the locally built Kitty executing the temp script
 "$DIR/kitty/launcher/kitty" \
-  --config "~/.config/kitty/kitty-bg.conf" \
   -e "$TEMP_SCRIPT"
 
 # Clean up
